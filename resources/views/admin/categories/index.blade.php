@@ -32,34 +32,36 @@
           <div class="col-1">
             <a href="{{ route('admin.category.create') }}" class="btn btn-block btn-primary">Добавить</a>
           </div>
-          </div>
-          <div class="row">
+        </div>
+        <div class="row">
           <div class="col-12">
             <table class="table mt-3 w-25">
               <thead>
                 <tr>
                   <th scope="col">ID</th>
                   <th scope="col">Название</th>
-                  <th scope="col">Действия</th>
+                  <th scope="col" colspan="2" class="text-center">Действия</th>
+
                 </tr>
               </thead>
               <tbody>
                 @foreach ($categories as $category)
-                <tr>
-                  <td>{{ $category->id }}</td>
-                  <td>{{ $category->title }}</td>
-                  <td><a href="{{ route('admin.category.show', $category->id) }}"><i class="bi bi-eye"></i></a></td>
-                </tr>
+                  <tr>
+                    <td>{{ $category->id }}</td>
+                    <td>{{ $category->title }}</td>
+                    <td><a href="{{ route('admin.category.show', $category->id) }}"><i class="bi bi-eye"></i></a></td>
+                    <td><a href="{{ route('admin.category.edit', $category->id) }}"><i class="bi bi-pencil"></i></a></td>
+                  </tr>
                 @endforeach
               </tbody>
             </table>
           </div>
-          </div>
-          <!--begin::Small Box Widget 4-->
         </div>
-        <!--end::Small Box Widget 4-->
+        <!--begin::Small Box Widget 4-->
       </div>
-      <!--end::Col-->
+      <!--end::Small Box Widget 4-->
+    </div>
+    <!--end::Col-->
     </div>
     <!--end::Row-->
     <!--begin::Row-->
