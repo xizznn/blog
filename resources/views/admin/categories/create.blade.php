@@ -28,10 +28,14 @@
             <div class="row">
               <!--begin::Col-->
               <div class="col-12">
-              <form action="#" class="w-25">
+              <form action="{{ route('admin.category.store') }}" class="w-25" method="POST">
+                @csrf
                 <div class="form-group">
                 <label for="exampleInputEmail1" class="form-label">Название</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="title">
+                @error('title')
+                <div class="text-danger">Это поле необходимо заполнить {{ $message }}</div>
+                @enderror
                 </div>
                 <input type="submit" class="btn btn-primary mt-3" value="Добавить"></input>
               </form>
