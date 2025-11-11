@@ -30,9 +30,9 @@
                 <div class="row">
                     <!--begin::Col-->
                     <div class="col-12">
-                        <form action="{{ route('admin.post.store') }}" method="POST">
+                        <form action="{{ route('admin.post.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <div class="form-group w-25 mb-3">
+                            <div class="form-group w-50 mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Название</label>
                                 <input type="text" class="form-control" name="title" value="{{ old('title') }}">
                                 @error('title')
@@ -47,23 +47,26 @@
                             @error('content')
                                 <div class="text-danger">Это поле необходимо заполнить {{ $message }}</div>
                             @enderror
+
+                            <div class="form-group mt-3 w-50">
+                                <label for="formFile" class="form-label">Добавить превью</label>
+                                <input class="form-control" type="file" id="formFile" name="preview_image">
+                            </div>
+
+                            <div class="form-group mt-3 w-50">
+                                <label for="formFile" class="form-label">Добавить главное изображение</label>
+                                <input class="form-control" type="file" id="formFile" name="main_image">
+                            </div>
+
                             <div class="form-group">
-                                <input type="submit" class="btn btn-primary mt-3" value="Добавить"></input>
+                                <input type="submit" class="btn btn-primary mt-3" value="Добавить">
                             </div>
                         </form>
                     </div>
-                    <!--begin::Small Box Widget 4-->
                 </div>
-                <!--end::Small Box Widget 4-->
+                <!--end::Row-->
             </div>
-            <!--end::Col-->
-        </div>
-        <!--end::Row-->
-        <!--begin::Row-->
-
-        <!-- /.row (main row) -->
-        </div>
-        <!--end::Container-->
+            <!--end::Container-->
         </div>
         <!--end::App Content-->
     </main>

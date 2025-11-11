@@ -204,6 +204,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
     <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"
@@ -311,6 +312,9 @@
                     ['height', ['height']]
                 ]
             });
+        });
+        $(function() {
+            bsCustomFileInput.init();
         });
     </script>
 </body>
