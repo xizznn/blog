@@ -21,6 +21,8 @@
     <!--end::Primary Meta Tags-->
     <!--begin::Accessibility Features-->
     <!-- Skip links will be dynamically added by accessibility.js -->
+    <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}" />
+
     <meta name="supported-color-schemes" content="light dark" />
     <link rel="preload" href="{{ asset('./css/adminlte.css') }}" as="style" />
     <!--end::Accessibility Features-->
@@ -39,6 +41,7 @@
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     <!--begin::Required Plugin(AdminLTE)-->
     <link rel="stylesheet" href="{{ asset('./css/adminlte.css') }}" />
+
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}" />
 
 
@@ -204,6 +207,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"></script>
     <script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
     <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
 
@@ -316,6 +320,7 @@
         $(function() {
             bsCustomFileInput.init();
         });
+        $('.select2').select2()
     </script>
 </body>
 <!--end::Body-->
