@@ -53,7 +53,7 @@
                             <div class="form-group mt-3 w-50">
                                 <label for="formFile" class="form-label">Добавить превью</label>
                                 <div class="w-25">
-                                    <img src="{{ asset('storage/' . $post->preview_image) }}" class="w-25" alt="preview_image" style="width:300px; height: auto;">
+                                    <img src="{{ asset('storage/' . $post->preview_image) }}" class="w-25" alt="preview_image" style="min-width:300px; height: auto;">
                                 </div>
                                 <input class="form-control" type="file" id="formFile" name="preview_image">
                             </div>
@@ -63,7 +63,7 @@
                             <div class="form-group mt-3 w-50">
                                 <label for="formFile" class="form-label">Добавить главное изображение</label>
                                 <div class="w-25">
-                                    <img src="{{ asset('storage/' . $post->main_image) }}" alt="main_image" style="width:300px; height: auto;">
+                                    <img src="{{ asset('storage/' . $post->main_image) }}" alt="main_image" style="max-width:500px; height: auto;">
                                 </div>
                                 <input class="form-control" type="file" id="formFile" name="main_image">
                             </div>
