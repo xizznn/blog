@@ -501,6 +501,7 @@ class ComposerStaticInitc61ff82cbf0142a401a48a8161e1595a
     );
 
     public static $classMap = array (
+        'App\\Console\\Commands\\SyncImagesCommand' => __DIR__ . '/../..' . '/app/Console/Commands/SyncImagesCommand.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Admin\\Category\\CreateController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Category/CreateController.php',
