@@ -30,7 +30,8 @@
                 <div class="row">
                     <!--begin::Col-->
                     <div class="col-12">
-                        <form action="{{ route('admin.post.update', $post->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.post.update', $post->id) }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
                             @csrf
@@ -38,7 +39,7 @@
                                 <label for="exampleInputEmail1" class="form-label">Название</label>
                                 <input type="text" class="form-control" name="title" value="{{ $post->title }}">
                                 @error('title')
-                                    <div class="text-danger">Это поле необходимо заполнить {{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
@@ -47,28 +48,30 @@
                                 </textarea>
                             </div>
                             @error('content')
-                                <div class="text-danger">Это поле необходимо заполнить {{ $message }}</div>
+                                <div class="text-danger">{{ $message }}</div>
                             @enderror
 
                             <div class="form-group mt-3 w-50">
                                 <label for="formFile" class="form-label">Добавить превью</label>
                                 <div class="w-25">
-                                    <img src="{{ asset('storage/' . $post->preview_image) }}" class="w-25" alt="preview_image" style="min-width:300px; height: auto;">
+                                    <img src="{{ asset('storage/' . $post->preview_image) }}" class="w-25"
+                                        alt="preview_image" style="min-width:300px; height: auto;">
                                 </div>
                                 <input class="form-control" type="file" id="formFile" name="preview_image">
                             </div>
                             @error('preview_image')
-                                <div class="text-danger">Это поле необходимо заполнить {{ $message }}</div>
+                                <div class="text-danger">{{ $message }}</div>
                             @enderror
                             <div class="form-group mt-3 w-50">
                                 <label for="formFile" class="form-label">Добавить главное изображение</label>
                                 <div class="w-25">
-                                    <img src="{{ asset('storage/' . $post->main_image) }}" alt="main_image" style="max-width:500px; height: auto;">
+                                    <img src="{{ asset('storage/' . $post->main_image) }}" alt="main_image"
+                                        style="max-width:500px; height: auto;">
                                 </div>
                                 <input class="form-control" type="file" id="formFile" name="main_image">
                             </div>
                             @error('main_image')
-                                <div class="text-danger">Это поле необходимо заполнить {{ $message }}</div>
+                                <div class="text-danger">{{ $message }}</div>
                             @enderror
                             <div class="form-group mt-3 w-50">
                                 <label>Выберите категорию</label>
@@ -80,6 +83,9 @@
                                         </option>
                                     @endforeach
                                 </select>
+                                @error('category_id')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group mt-3 w-50">
                                 <label>Теги</label>
@@ -91,6 +97,9 @@
                                             value="{{ $tag->id }}">{{ $tag->title }}</option>
                                     @endforeach
                                 </select>
+                                @error('tag_ids')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary mt-3" value="Обновить">
