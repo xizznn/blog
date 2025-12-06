@@ -8,12 +8,13 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use App\models\Comment;
 
-class IndexController extends Controller
+class DeleteController extends Controller
 {
-    public function __invoke()
+    public function __invoke(Comment $comment)
     {
-        $comments = auth()->user()->comments;
-        return view('personal.comment.index', compact('comments'));
+        $comment->delete();
+        return redirect()->route('personal.comment.index');
     }
 }

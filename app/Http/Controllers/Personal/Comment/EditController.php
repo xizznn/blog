@@ -8,12 +8,12 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use App\models\Comment;
 
-class IndexController extends Controller
+class EditController extends Controller
 {
-    public function __invoke()
+    public function __invoke(Comment $comment)
     {
-        $comments = auth()->user()->comments;
-        return view('personal.comment.index', compact('comments'));
+        return view('personal.comment.edit', compact('comment'));
     }
 }
